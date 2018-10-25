@@ -45,7 +45,7 @@ public class StartController {
                 System.out.println("登录成功");
                 lb_flag.setText("");
                 GUIState.getStage().hide();
-                JavaFxViewUtil.getNewStage("Second", "", secondView.getView());
+                JavaFxViewUtil.toNewStage("Second", "", secondView.getView());
                 break;
             case 2:
                 lb_flag.setText("密码错误");
@@ -58,7 +58,7 @@ public class StartController {
 
     public void toSecond(ActionEvent actionEvent) {
         GUIState.getStage().hide();
-        JavaFxViewUtil.getNewStage("Second", "", secondView.getView());
+        JavaFxViewUtil.toNewStage("Second", "", secondView.getView());
     }
 
 }
