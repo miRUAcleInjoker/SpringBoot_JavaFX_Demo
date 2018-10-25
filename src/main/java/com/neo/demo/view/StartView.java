@@ -1,4 +1,4 @@
-package com.neo.demo;
+package com.neo.demo.view;
 
 import de.felixroske.jfxsupport.AbstractFxmlView;
 import de.felixroske.jfxsupport.FXMLView;

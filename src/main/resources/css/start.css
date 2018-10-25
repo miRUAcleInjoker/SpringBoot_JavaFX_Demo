@@ -1,0 +1,11 @@
+/*.button {*/
+    /*-fx-background-color: #009688;*/
+    /*-fx-background-radius: 0;*/
+    /*-fx-text-fill: #FFFFFF;*/
+    /*-fx-margin: 0;*/
+/*}*/
+
+.root {
+    -fx-background-image: url("/images/login.jpg");
+    /*-fx-background-color: #87CEFA;*/
+}
