@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.neo.demo.mapper.DeviceMapper">
+    <resultMap id="BaseResultMap" type="com.neo.demo.pojo.Device">
+        <result column="PK" jdbcType="VARCHAR" property="pk"/>
+        <result column="ID" jdbcType="VARCHAR" property="id"/>
+        <result column="DevNO" jdbcType="VARCHAR" property="devno"/>
+        <result column="DevType" jdbcType="VARCHAR" property="devtype"/>
+        <result column="SizeType" jdbcType="VARCHAR" property="sizetype"/>
+        <result column="Unit" jdbcType="VARCHAR" property="unit"/>
+        <result column="DevName" jdbcType="VARCHAR" property="devname"/>
+        <result column="SBMC" jdbcType="VARCHAR" property="sbmc"/>
+        <result column="CGJ" jdbcType="INTEGER" property="cgj"/>
+        <result column="CBJ" jdbcType="INTEGER" property="cbj"/>
+        <result column="XSJ" jdbcType="INTEGER" property="xsj"/>
+        <result column="YYSL" jdbcType="INTEGER" property="yysl"/>
+        <result column="ZCGJ" jdbcType="INTEGER" property="zcgj"/>
+        <result column="ZCBJ" jdbcType="INTEGER" property="zcbj"/>
+        <result column="ZXSJ" jdbcType="INTEGER" property="zxsj"/>
+        <result column="SBDJ" jdbcType="VARCHAR" property="sbdj"/>
+        <result column="JZ" jdbcType="INTEGER" property="jz"/>
+        <result column="BXX" jdbcType="VARCHAR" property="bxx"/>
+        <result column="CGDH" jdbcType="INTEGER" property="cgdh"/>
+        <result column="FPH" jdbcType="INTEGER" property="fph"/>
+        <result column="CGRQ" jdbcType="TIMESTAMP" property="cgrq"/>
+        <result column="SCCJ" jdbcType="VARCHAR" property="sccj"/>
+        <result column="WXCJ" jdbcType="INTEGER" property="wxcj"/>
+        <result column="BXCJ" jdbcType="VARCHAR" property="bxcj"/>
+        <result column="SCCJID" jdbcType="VARCHAR" property="sccjid"/>
+        <result column="WXCJID" jdbcType="INTEGER" property="wxcjid"/>
+        <result column="BXCJID" jdbcType="VARCHAR" property="bxcjid"/>
+        <result column="CCRQ" jdbcType="TIMESTAMP" property="ccrq"/>
+        <result column="FWFS" jdbcType="VARCHAR" property="fwfs"/>
+        <result column="BXKSSJ" jdbcType="TIMESTAMP" property="bxkssj"/>
+        <result column="BXJSSJ" jdbcType="TIMESTAMP" property="bxjssj"/>
+        <result column="SYRQ" jdbcType="TIMESTAMP" property="syrq"/>
+        <result column="FZR" jdbcType="INTEGER" property="fzr"/>
+        <result column="SBZT" jdbcType="VARCHAR" property="sbzt"/>
+        <result column="ZYQZT" jdbcType="INTEGER" property="zyqzt"/>
+        <result column="TZF" jdbcType="VARCHAR" property="tzf"/>
+        <result column="ZSZD" jdbcType="VARCHAR" property="zszd"/>
+        <result column="CJZ" jdbcType="VARCHAR" property="cjz"/>
+        <result column="ZSZDID" jdbcType="CHAR" property="zszdid"/>
+        <result column="CJZID" jdbcType="VARCHAR" property="cjzid"/>
+        <result column="SYWZ" jdbcType="VARCHAR" property="sywz"/>
+        <result column="IP" jdbcType="VARCHAR" property="ip"/>
+        <result column="ZYBZ" jdbcType="BIT" property="zybz"/>
+        <result column="MEMO" jdbcType="VARCHAR" property="memo"/>
+        <result column="ZHXGR" jdbcType="INTEGER" property="zhxgr"/>
+        <result column="ZHXGRID" jdbcType="VARCHAR" property="zhxgrid"/>
+        <result column="ZHXGSJ" jdbcType="TIMESTAMP" property="zhxgsj"/>
+        <result column="DEVSTATUS" jdbcType="VARCHAR" property="devstatus"/>
+        <result column="FunderID" jdbcType="VARCHAR" property="funderid"/>
+        <result column="ClassNO" jdbcType="VARCHAR" property="classno"/>
+        <result column="State" jdbcType="VARCHAR" property="state"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    PK, ID, DevNO, DevType, SizeType, Unit, DevName, SBMC, CGJ, CBJ, XSJ, YYSL, ZCGJ,
+    ZCBJ, ZXSJ, SBDJ, JZ, BXX, CGDH, FPH, CGRQ, SCCJ, WXCJ, BXCJ, SCCJID, WXCJID, BXCJID,
+    CCRQ, FWFS, BXKSSJ, BXJSSJ, SYRQ, FZR, SBZT, ZYQZT, TZF, ZSZD, CJZ, ZSZDID, CJZID,
+    SYWZ, IP, ZYBZ, MEMO, ZHXGR, ZHXGRID, ZHXGSJ, DEVSTATUS, FunderID, ClassNO, State
+  </sql>
+    <insert id="insert" parameterType="com.neo.demo.pojo.Device">
+    insert into TB_DEVICE (PK, ID, DevNO, 
+      DevType, SizeType, Unit, 
+      DevName, SBMC, CGJ, 
+      CBJ, XSJ, YYSL, ZCGJ, 
+      ZCBJ, ZXSJ, SBDJ, JZ, 
+      BXX, CGDH, FPH, CGRQ, 
+      SCCJ, WXCJ, BXCJ, SCCJID, 
+      WXCJID, BXCJID, CCRQ, 
+      FWFS, BXKSSJ, BXJSSJ, 
+      SYRQ, FZR, SBZT, 
+      ZYQZT, TZF, ZSZD, CJZ, 
+      ZSZDID, CJZID, SYWZ, IP, 
+      ZYBZ, MEMO, ZHXGR, ZHXGRID, 
+      ZHXGSJ, DEVSTATUS, FunderID, 
+      ClassNO, State)
+    values (#{pk,jdbcType=VARCHAR}, #{id,jdbcType=VARCHAR}, #{devno,jdbcType=VARCHAR}, 
+      #{devtype,jdbcType=VARCHAR}, #{sizetype,jdbcType=VARCHAR}, #{unit,jdbcType=VARCHAR}, 
+      #{devname,jdbcType=VARCHAR}, #{sbmc,jdbcType=VARCHAR}, #{cgj,jdbcType=INTEGER}, 
+      #{cbj,jdbcType=INTEGER}, #{xsj,jdbcType=INTEGER}, #{yysl,jdbcType=INTEGER}, #{zcgj,jdbcType=INTEGER}, 
+      #{zcbj,jdbcType=INTEGER}, #{zxsj,jdbcType=INTEGER}, #{sbdj,jdbcType=VARCHAR}, #{jz,jdbcType=INTEGER}, 
+      #{bxx,jdbcType=VARCHAR}, #{cgdh,jdbcType=INTEGER}, #{fph,jdbcType=INTEGER}, #{cgrq,jdbcType=TIMESTAMP}, 
+      #{sccj,jdbcType=VARCHAR}, #{wxcj,jdbcType=INTEGER}, #{bxcj,jdbcType=VARCHAR}, #{sccjid,jdbcType=VARCHAR}, 
+      #{wxcjid,jdbcType=INTEGER}, #{bxcjid,jdbcType=VARCHAR}, #{ccrq,jdbcType=TIMESTAMP}, 
+      #{fwfs,jdbcType=VARCHAR}, #{bxkssj,jdbcType=TIMESTAMP}, #{bxjssj,jdbcType=TIMESTAMP}, 
+      #{syrq,jdbcType=TIMESTAMP}, #{fzr,jdbcType=INTEGER}, #{sbzt,jdbcType=VARCHAR}, 
+      #{zyqzt,jdbcType=INTEGER}, #{tzf,jdbcType=VARCHAR}, #{zszd,jdbcType=VARCHAR}, #{cjz,jdbcType=VARCHAR}, 
+      #{zszdid,jdbcType=CHAR}, #{cjzid,jdbcType=VARCHAR}, #{sywz,jdbcType=VARCHAR}, #{ip,jdbcType=VARCHAR}, 
+      #{zybz,jdbcType=BIT}, #{memo,jdbcType=VARCHAR}, #{zhxgr,jdbcType=INTEGER}, #{zhxgrid,jdbcType=VARCHAR}, 
+      #{zhxgsj,jdbcType=TIMESTAMP}, #{devstatus,jdbcType=VARCHAR}, #{funderid,jdbcType=VARCHAR}, 
+      #{classno,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.neo.demo.pojo.Device">
+        insert into TB_DEVICE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="pk != null">
+                PK,
+            </if>
+            <if test="id != null">
+                ID,
+            </if>
+            <if test="devno != null">
+                DevNO,
+            </if>
+            <if test="devtype != null">
+                DevType,
+            </if>
+            <if test="sizetype != null">
+                SizeType,
+            </if>
+            <if test="unit != null">
+                Unit,
+            </if>
+            <if test="devname != null">
+                DevName,
+            </if>
+            <if test="sbmc != null">
+                SBMC,
+            </if>
+            <if test="cgj != null">
+                CGJ,
+            </if>
+            <if test="cbj != null">
+                CBJ,
+            </if>
+            <if test="xsj != null">
+                XSJ,
+            </if>
+            <if test="yysl != null">
+                YYSL,
+            </if>
+            <if test="zcgj != null">
+                ZCGJ,
+            </if>
+            <if test="zcbj != null">
+                ZCBJ,
+            </if>
+            <if test="zxsj != null">
+                ZXSJ,
+            </if>
+            <if test="sbdj != null">
+                SBDJ,
+            </if>
+            <if test="jz != null">
+                JZ,
+            </if>
+            <if test="bxx != null">
+                BXX,
+            </if>
+            <if test="cgdh != null">
+                CGDH,
+            </if>
+            <if test="fph != null">
+                FPH,
+            </if>
+            <if test="cgrq != null">
+                CGRQ,
+            </if>
+            <if test="sccj != null">
+                SCCJ,
+            </if>
+            <if test="wxcj != null">
+                WXCJ,
+            </if>
+            <if test="bxcj != null">
+                BXCJ,
+            </if>
+            <if test="sccjid != null">
+                SCCJID,
+            </if>
+            <if test="wxcjid != null">
+                WXCJID,
+            </if>
+            <if test="bxcjid != null">
+                BXCJID,
+            </if>
+            <if test="ccrq != null">
+                CCRQ,
+            </if>
+            <if test="fwfs != null">
+                FWFS,
+            </if>
+            <if test="bxkssj != null">
+                BXKSSJ,
+            </if>
+            <if test="bxjssj != null">
+                BXJSSJ,
+            </if>
+            <if test="syrq != null">
+                SYRQ,
+            </if>
+            <if test="fzr != null">
+                FZR,
+            </if>
+            <if test="sbzt != null">
+                SBZT,
+            </if>
+            <if test="zyqzt != null">
+                ZYQZT,
+            </if>
+            <if test="tzf != null">
+                TZF,
+            </if>
+            <if test="zszd != null">
+                ZSZD,
+            </if>
+            <if test="cjz != null">
+                CJZ,
+            </if>
+            <if test="zszdid != null">
+                ZSZDID,
+            </if>
+            <if test="cjzid != null">
+                CJZID,
+            </if>
+            <if test="sywz != null">
+                SYWZ,
+            </if>
+            <if test="ip != null">
+                IP,
+            </if>
+            <if test="zybz != null">
+                ZYBZ,
+            </if>
+            <if test="memo != null">
+                MEMO,
+            </if>
+            <if test="zhxgr != null">
+                ZHXGR,
+            </if>
+            <if test="zhxgrid != null">
+                ZHXGRID,
+            </if>
+            <if test="zhxgsj != null">
+                ZHXGSJ,
+            </if>
+            <if test="devstatus != null">
+                DEVSTATUS,
+            </if>
+            <if test="funderid != null">
+                FunderID,
+            </if>
+            <if test="classno != null">
+                ClassNO,
+            </if>
+            <if test="state != null">
+                State,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="pk != null">
+                #{pk,jdbcType=VARCHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=VARCHAR},
+            </if>
+            <if test="devno != null">
+                #{devno,jdbcType=VARCHAR},
+            </if>
+            <if test="devtype != null">
+                #{devtype,jdbcType=VARCHAR},
+            </if>
+            <if test="sizetype != null">
+                #{sizetype,jdbcType=VARCHAR},
+            </if>
+            <if test="unit != null">
+                #{unit,jdbcType=VARCHAR},
+            </if>
+            <if test="devname != null">
+                #{devname,jdbcType=VARCHAR},
+            </if>
+            <if test="sbmc != null">
+                #{sbmc,jdbcType=VARCHAR},
+            </if>
+            <if test="cgj != null">
+                #{cgj,jdbcType=INTEGER},
+            </if>
+            <if test="cbj != null">
+                #{cbj,jdbcType=INTEGER},
+            </if>
+            <if test="xsj != null">
+                #{xsj,jdbcType=INTEGER},
+            </if>
+            <if test="yysl != null">
+                #{yysl,jdbcType=INTEGER},
+            </if>
+            <if test="zcgj != null">
+                #{zcgj,jdbcType=INTEGER},
+            </if>
+            <if test="zcbj != null">
+                #{zcbj,jdbcType=INTEGER},
+            </if>
+            <if test="zxsj != null">
+                #{zxsj,jdbcType=INTEGER},
+            </if>
+            <if test="sbdj != null">
+                #{sbdj,jdbcType=VARCHAR},
+            </if>
+            <if test="jz != null">
+                #{jz,jdbcType=INTEGER},
+            </if>
+            <if test="bxx != null">
+                #{bxx,jdbcType=VARCHAR},
+            </if>
+            <if test="cgdh != null">
+                #{cgdh,jdbcType=INTEGER},
+            </if>
+            <if test="fph != null">
+                #{fph,jdbcType=INTEGER},
+            </if>
+            <if test="cgrq != null">
+                #{cgrq,jdbcType=TIMESTAMP},
+            </if>
+            <if test="sccj != null">
+                #{sccj,jdbcType=VARCHAR},
+            </if>
+            <if test="wxcj != null">
+                #{wxcj,jdbcType=INTEGER},
+            </if>
+            <if test="bxcj != null">
+                #{bxcj,jdbcType=VARCHAR},
+            </if>
+            <if test="sccjid != null">
+                #{sccjid,jdbcType=VARCHAR},
+            </if>
+            <if test="wxcjid != null">
+                #{wxcjid,jdbcType=INTEGER},
+            </if>
+            <if test="bxcjid != null">
+                #{bxcjid,jdbcType=VARCHAR},
+            </if>
+            <if test="ccrq != null">
+                #{ccrq,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fwfs != null">
+                #{fwfs,jdbcType=VARCHAR},
+            </if>
+            <if test="bxkssj != null">
+                #{bxkssj,jdbcType=TIMESTAMP},
+            </if>
+            <if test="bxjssj != null">
+                #{bxjssj,jdbcType=TIMESTAMP},
+            </if>
+            <if test="syrq != null">
+                #{syrq,jdbcType=TIMESTAMP},
+            </if>
+            <if test="fzr != null">
+                #{fzr,jdbcType=INTEGER},
+            </if>
+            <if test="sbzt != null">
+                #{sbzt,jdbcType=VARCHAR},
+            </if>
+            <if test="zyqzt != null">
+                #{zyqzt,jdbcType=INTEGER},
+            </if>
+            <if test="tzf != null">
+                #{tzf,jdbcType=VARCHAR},
+            </if>
+            <if test="zszd != null">
+                #{zszd,jdbcType=VARCHAR},
+            </if>
+            <if test="cjz != null">
+                #{cjz,jdbcType=VARCHAR},
+            </if>
+            <if test="zszdid != null">
+                #{zszdid,jdbcType=CHAR},
+            </if>
+            <if test="cjzid != null">
+                #{cjzid,jdbcType=VARCHAR},
+            </if>
+            <if test="sywz != null">
+                #{sywz,jdbcType=VARCHAR},
+            </if>
+            <if test="ip != null">
+                #{ip,jdbcType=VARCHAR},
+            </if>
+            <if test="zybz != null">
+                #{zybz,jdbcType=BIT},
+            </if>
+            <if test="memo != null">
+                #{memo,jdbcType=VARCHAR},
+            </if>
+            <if test="zhxgr != null">
+                #{zhxgr,jdbcType=INTEGER},
+            </if>
+            <if test="zhxgrid != null">
+                #{zhxgrid,jdbcType=VARCHAR},
+            </if>
+            <if test="zhxgsj != null">
+                #{zhxgsj,jdbcType=TIMESTAMP},
+            </if>
+            <if test="devstatus != null">
+                #{devstatus,jdbcType=VARCHAR},
+            </if>
+            <if test="funderid != null">
+                #{funderid,jdbcType=VARCHAR},
+            </if>
+            <if test="classno != null">
+                #{classno,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="selectById" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from TB_DEVICE
+        where ID = #{id}
+    </select>
+</mapper>

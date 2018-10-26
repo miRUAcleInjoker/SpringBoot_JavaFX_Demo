@@ -3,14 +3,16 @@ package com.neo.demo;
 import com.neo.demo.view.StartView;
 import de.felixroske.jfxsupport.AbstractJavaFxApplicationSupport;
 import javafx.stage.Stage;
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
+@MapperScan("com.neo.demo.mapper")
 public class DemoApplication extends AbstractJavaFxApplicationSupport {
 
     public static void main(String[] args) {
         //SpringApplication.run(DemoApplication.class, args);
-        launch(DemoApplication.class, StartView.class,args);
+        launch(DemoApplication.class, StartView.class, args);
     }
 
     @Override

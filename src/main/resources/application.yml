@@ -1,0 +1,10 @@
+#spring.datasource.url=jdbc:sqlserver://172.16.3.180:1433;databaseName=newSTOA
+#spring.datasource.username=sa
+#spring.datasource.password=123@qq.com
+#spring.datasource.driverClassName=com.microsoft.sqlserver.jdbc.SQLServerDriver
+spring:
+  datasource:
+    url: jdbc:sqlserver://172.16.3.180:1433;databaseName=newSTOA
+    username: sa
+    password: 123@qq.com
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver

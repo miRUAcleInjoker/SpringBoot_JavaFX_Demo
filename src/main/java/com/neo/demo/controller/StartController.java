@@ -8,13 +8,17 @@ import de.felixroske.jfxsupport.FXMLController;
 import de.felixroske.jfxsupport.GUIState;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 @FXMLController
-public class StartController {
+public class StartController implements Initializable {
     @Autowired
     private SecondView secondView;
     @Autowired
@@ -61,4 +65,8 @@ public class StartController {
         JavaFxViewUtil.toNewStage("Second", "", secondView.getView());
     }
 
+    @Override
+    public void initialize(URL location, ResourceBundle resources) {
+        System.out.println("正在initialize");
+    }
 }
