@@ -1,18 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neo.demo.controller.SecondController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.neo.demo.controller.SecondController">
     <TableView fx:id="tv_test" layoutX="14.0" layoutY="57.0" prefHeight="333.0" prefWidth="571.0">
         <columns>
             <!--cellValueFactory对应实体类中的属性，然后setItem(ObservaObservableList)-->
-            <TableColumn prefWidth="75.0" text="用户名"/>
-            <TableColumn prefWidth="75.0" text="密码"/>
+            <TableColumn prefWidth="75.0" text="用户名" />
+            <TableColumn prefWidth="75.0" text="密码" />
         </columns>
     </TableView>
-    <Button fx:id="btn_test" layoutX="272.0" layoutY="22.0" mnemonicParsing="false" onAction="#click" text="test"/>
+    <Button fx:id="btn_test" layoutX="272.0" layoutY="22.0" mnemonicParsing="false" onAction="#click" text="test" />
+   <Label fx:id="lb_test" layoutX="14.0" layoutY="7.0" text="Label" />
+   <Button fx:id="btn_test2" layoutX="361.0" layoutY="22.0" mnemonicParsing="false" text="test2" onAction="#btn2click" />
 </AnchorPane>

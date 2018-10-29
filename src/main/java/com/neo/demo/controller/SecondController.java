@@ -5,10 +5,14 @@ import com.neo.demo.pojo.User;
 import com.neo.demo.service.DeviceService;
 import com.neo.demo.service.UserService;
 import de.felixroske.jfxsupport.FXMLController;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.property.StringProperty;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +22,16 @@ import java.util.ResourceBundle;
 
 @FXMLController
 public class SecondController implements Initializable {
+    private StringProperty stringProperty = new SimpleStringProperty();
+
     @Autowired
     private UserService userService;
     @Autowired
     private DeviceService deviceService;
     @FXML
     private Button btn_test;
+    @FXML
+    private Label lb_test;
     @FXML
     private TableView<User> tv_test = new TableView<>();
 
@@ -42,6 +50,7 @@ public class SecondController implements Initializable {
 //        tv_test.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("password"));
 //        TableView装配数据
         tv_test.setItems(userService.getAll());
+        stringProperty.set("test1");
     }
 
     @Override
@@ -49,5 +58,12 @@ public class SecondController implements Initializable {
         //初始化方法里做映射
         tv_test.getColumns().get(0).setCellValueFactory(new PropertyValueFactory<>("username"));
         tv_test.getColumns().get(1).setCellValueFactory(new PropertyValueFactory<>("password"));
+
+        //bind
+        lb_test.textProperty().bind(stringProperty);
+    }
+
+    public void btn2click(ActionEvent actionEvent) {
+        stringProperty.set("test2");
     }
 }
